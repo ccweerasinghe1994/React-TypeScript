@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   CustomButton,
   CustomInput,
@@ -6,7 +6,7 @@ import {
   Header,
   ListContainer,
   Wrapper,
-} from "./guest-list.styles";
+} from "../state/guest-list.styles";
 export const usersData = [
   {
     name: "a",
@@ -25,24 +25,42 @@ export const usersData = [
     age: 20,
   },
 ];
-const FindUser: React.FC = () => {
+const FindUserWithRef: React.FC = () => {
   const [name, setName] = useState("");
   const [user, setUser] = useState<{ name: string; age: number } | undefined>();
-  const onClick = () => {
-    console.log(name);
+  const [hasError, setHasError] = useState(false);
 
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const onClick = () => {
     const foundUser = usersData.find(
       (user) => user.name === name.toLowerCase()
     );
-    console.log(foundUser);
+    if (!foundUser) {
+      setHasError(true);
+    } else {
+      setHasError(false);
+    }
 
     setUser(foundUser);
   };
 
+  useEffect(() => {
+    if (!inputRef.current) return;
+    inputRef.current.focus();
+    return;
+  }, []);
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+    if (!event.target.value) {
+      setHasError(false);
+      setUser(undefined);
+    }
+  };
   return (
     <Wrapper>
       <Header>Find User</Header>
-      <CustomInput value={name} onChange={(e) => setName(e.target.value)} />
+      <CustomInput ref={inputRef} value={name} onChange={onChange} />
       <CustomButton onClick={onClick}>find user</CustomButton>
 
       <ListContainer>
@@ -51,12 +69,12 @@ const FindUser: React.FC = () => {
             <li>name : {user.name}</li>
             <li>age : {user.age}</li>
           </>
-        ) : (
+        ) : hasError ? (
           <ErrorContainer>canto find the specified user</ErrorContainer>
-        )}
+        ) : null}
       </ListContainer>
     </Wrapper>
   );
 };
 
-export default FindUser;
+export default FindUserWithRef;

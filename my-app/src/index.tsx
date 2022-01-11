@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom";
-import {createGlobalStyle} from 'styled-components';
-import EventHandler from "./evemt/eventHandler";
-import FindUser from "./state/findUser";
+import { createGlobalStyle } from "styled-components";
+import FindUserWithRef from "./refs/findUser";
 
 const GlobalStyles = createGlobalStyle`
 *,*::after,*::before{
@@ -18,13 +17,13 @@ body{
     background-image: linear-gradient(to bottom right,rgba(241, 113, 9, 0.1),rgba(219, 80, 16, 0.1));
 }
 
-`
+`;
 
-const App =()=>(
-    <>
-    <GlobalStyles/>
-        <EventHandler/>
-    </>
-)
+const App = () => (
+  <>
+    <GlobalStyles />
+    <FindUserWithRef />
+  </>
+);
 
-ReactDOM.render(<App/>,document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector("#root"));
