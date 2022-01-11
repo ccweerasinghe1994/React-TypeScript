@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 import {createGlobalStyle} from 'styled-components';
+import EventHandler from "./evemt/eventHandler";
 import FindUser from "./state/findUser";
 
 const GlobalStyles = createGlobalStyle`
@@ -22,7 +23,7 @@ body{
 const App =()=>(
     <>
     <GlobalStyles/>
-        <FindUser/>
+        <EventHandler/>
     </>
 )
 
