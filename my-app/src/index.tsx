@@ -1,10 +1,16 @@
 import ReactDOM from "react-dom";
-import GuestList from "./state/guest-list";
 import {createGlobalStyle} from 'styled-components';
+import FindUser from "./state/findUser";
 
 const GlobalStyles = createGlobalStyle`
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html{
     font-family: 'Bebas Neue', cursive;
+
 }
 
 body{
@@ -16,7 +22,7 @@ body{
 const App =()=>(
     <>
     <GlobalStyles/>
-        <GuestList/>
+        <FindUser/>
     </>
 )
 
