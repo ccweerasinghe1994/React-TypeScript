@@ -10,7 +10,7 @@ export const InputContainer = styled.input.attrs(({placeholder}) => {
   padding: .5rem 2rem;
   font-size: 1.6rem;
   font-weight: 200;
-  margin: 1rem 1rem;
+  margin: 1rem 0;
   border-radius: .4rem;
   border: 1px solid ${colors.colorPrimary};
 
@@ -44,11 +44,13 @@ export const CustomButton = styled.button`
   border-radius: .3rem;
   font-weight: 900;
   letter-spacing: .1rem;
-  margin-left: 1rem;
+  
 `
 export const ItemContainer = styled.div`
   border-radius: .3rem;
-  margin: 1rem 1rem;
+  margin: 1rem 0rem;
+  width: clamp(200px,60%,500px);
+  
   padding: 1rem;
   background-image: linear-gradient(to right, ${colors.colorPrimaryDark}, ${colors.colorPrimaryLight});
   font-size: 1.6rem;

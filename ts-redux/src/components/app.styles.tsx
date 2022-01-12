@@ -29,6 +29,7 @@ export const MainHeaderContainer = styled.h3`
   text-decoration: underline;
   text-transform: uppercase;
   background-image: linear-gradient(to right, ${colors.colorPrimaryDark}, ${colors.colorPrimaryLight});
+  -webkit-background-clip:text;
   background-clip: text;
   color: transparent;
   letter-spacing: .3rem;
