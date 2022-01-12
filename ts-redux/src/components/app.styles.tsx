@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
 export const MainHeaderContainer = styled.h3`
   text-align: center;
   padding: 1rem;
-  font-size: clamp(3rem,4rem,6rem);
+  font-size: clamp(1.6rem,7vw,5rem);
   font-weight: 900;
   text-decoration: underline;
   text-transform: uppercase;
