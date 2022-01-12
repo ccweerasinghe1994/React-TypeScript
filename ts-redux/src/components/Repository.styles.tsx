@@ -27,7 +27,10 @@ const commonWrapper = css`
   padding: 4rem;
   width: 85vw;
   margin: 4rem auto;
-  background-color: #ffffff;
+  
+  backdrop-filter: blur( 11px );
+  -webkit-backdrop-filter: blur( 11px );
+  background: rgba( 94, 193, 127, 0.2 );
 `
 export const FormContainer = styled.form`
   ${commonWrapper}
