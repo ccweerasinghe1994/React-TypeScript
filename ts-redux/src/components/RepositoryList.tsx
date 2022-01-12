@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useTypeSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/userActions";
 
@@ -15,10 +15,12 @@ import {
 
 const RepositoryList = () => {
     const [term, setTerm] = useState("");
+    const [showEmptyMessage,setShowEmptyMessage] = useState(false);
     const {searchRepositories} = useActions();
-    const {data, error, loading} = useTypeSelector(
+    const {data, error, loading,firstRender} = useTypeSelector(
         (state) => state.repositories
     );
+
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -38,11 +40,11 @@ const RepositoryList = () => {
             </FormContainer>
 
             <ContentWrapper>
-                {data.length > 0 ? <HeaderSecondaryContainer>packages</HeaderSecondaryContainer> : !loading ?
-                    <ErrorContainer>no packages found </ErrorContainer> : null}
+                {data.length > 0 ? <HeaderSecondaryContainer>packages</HeaderSecondaryContainer> : null}
+                { firstRender && data.length===0  && <ErrorContainer>Cannot find the mentioned repository</ErrorContainer>}
                 {error && <h3>{error}</h3>}
                 {loading && <h3>Loading ...</h3>}
-                {!error && !loading && data.map((name) => <ItemContainer key={name}>{name}</ItemContainer>)}
+                {!error && !loading &&  data.map((name) => <ItemContainer key={name}>{name}</ItemContainer>)}
             </ContentWrapper>
         </div>
     );
