@@ -68,6 +68,7 @@ export const HeaderSecondaryContainer = styled.h3`
   font-size: clamp(2rem, 3rem, 6rem);
   background-image: linear-gradient(to right, ${colors.colorPrimaryDark}, ${colors.colorPrimaryLight});
   background-clip: text;
+  -webkit-background-clip:text;
   color: transparent;
   letter-spacing: .3rem;
   font-weight: 900;

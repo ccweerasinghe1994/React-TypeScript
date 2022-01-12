@@ -31,7 +31,6 @@ export const MainHeaderContainer = styled.h3`
   background-image: linear-gradient(to right, ${colors.colorPrimaryDark}, ${colors.colorPrimaryLight});
   -webkit-background-clip:text;
   background-clip: text;
-  color: ${colors.colorWhite};
   color: transparent;
   letter-spacing: .3rem;
 `;
