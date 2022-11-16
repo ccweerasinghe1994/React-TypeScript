@@ -1,16 +1,19 @@
 import * as esbuild from 'esbuild-wasm';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
+import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 
 function App() {
   const [input, setInput] = useState<string>('');
   const [code, setCode] = useState<string>('');
+  const ref = useRef<any>();
+  // console.log('🔥-> ref', ref);
+
   const startService = async () => {
-    const service = await esbuild.initialize({
+    ref.current = await esbuild.initialize({
       worker: true,
       wasmURL: './esbuild.wasm',
     });
-    console.log(service);
   };
 
   useEffect(() => {
@@ -20,8 +23,15 @@ function App() {
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(event.target.value);
   };
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(input);
+  const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    const result = await esbuild.build({
+      entryPoints: ['index.js'],
+      bundle: true,
+      write: false,
+      plugins: [unpkgPathPlugin()],
+    });
+    // console.log(result);
+    setCode(result.outputFiles[0].text);
   };
   return (
     <>
@@ -37,7 +47,7 @@ function App() {
         <button onClick={handleClick} type='button'>
           Submit
         </button>
-        <pre></pre>
+        <pre>{code}</pre>
       </div>
     </>
   );
