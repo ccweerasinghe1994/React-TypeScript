@@ -2,7 +2,7 @@ import React from "react";
 import { CustomInput, Header, Wrapper } from "../state/guest-list.styles";
 
 const EventHandler: React.FC = () => {
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event:React.ChangeEvent<HTMLInputElement>) => {
     console.log(event);
   };
 
