@@ -110,8 +110,14 @@ const Parent = ()=>{
 export default Parent;
 ```
 ### 5. State with TypeScript
+sample project we are going to build
+![Alt text](img/5.png)
 ### 6. Type Inference with State
 ### 7. Quick Finish to the Example
+we have to add type to useState if the initial value will not help to infer the type
+```tsx
+const [guestList,setGuestList] = useState<string[]>([])
+```
 ### 8. More on State
 ### 9. Type Unions in State
 
