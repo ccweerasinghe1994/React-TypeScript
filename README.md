@@ -66,14 +66,7 @@ there are few benefits to doing the types
 ![](img/4.png)
 
 ### 4. Annotations with Children
-### 5. State with TypeScript
-### 6. Type Inference with State
-### 7. Quick Finish to the Example
-### 8. More on State
-### 9. Type Unions in State
-
-2. The Big Difference with Props
-
+let's add a function to the interface and Component
 
 Child
 ```tsx
@@ -99,9 +92,7 @@ export const ChildAsFC:React.FC<ChildProps>=({color,onClick})=>{
 
 
 ```
-
 Parent
-
 
 ```tsx
 import {ChildAsFC} from './child'
@@ -118,6 +109,18 @@ const Parent = ()=>{
 
 export default Parent;
 ```
+### 5. State with TypeScript
+### 6. Type Inference with State
+### 7. Quick Finish to the Example
+### 8. More on State
+### 9. Type Unions in State
+
+2. The Big Difference with Props
+
+
+
+
+
 ```tsx
 
 ```
