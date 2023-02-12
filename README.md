@@ -775,6 +775,87 @@ const reducer = (state: RepositoryState, action: Action): RepositoryState => {
         ........... rest of the code
 ```
 ### 10. A Better Way to Organize Code
+
+folder structure
+![Alt text](img/16.png)
+
+let's cleanup the folder structure
+
+📂 repositories.reducer.tsx
+```tsx
+import { ActionTypes } from "../action-types";
+import { Action } from "../actions";
+
+interface RepositoryState {
+  loading: boolean;
+  error: string | null;
+  data: string[];
+}
+
+const reducer = (state: RepositoryState, action: Action): RepositoryState => {
+  switch (action.type) {
+    case ActionTypes.SEARCH_REPOSITORY_START:
+      return {
+        error: null,
+        data: [],
+        loading: true,
+      };
+    case ActionTypes.SEARCH_REPOSITORY_SUCCESS:
+      return {
+        error: null,
+        data: action.payload,
+        loading: false,
+      };
+    case ActionTypes.SEARCH_REPOSITORY_ERROR:
+      return {
+        error: action.payload,
+        data: [],
+        loading: false,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default reducer;
+
+```
+
+📂 **vite-typescript-redux\src\state\actions-types\index.ts**
+```tsx
+import { ActionTypes } from "../action-types";
+
+export type Action =
+  | SearchRepositoryStartAction
+  | SearchRepositorySuccessAction
+  | SearchRepositoryErrorAction;
+
+interface SearchRepositoryStartAction {
+  type: ActionTypes.SEARCH_REPOSITORY_START;
+}
+
+interface SearchRepositorySuccessAction {
+  type: ActionTypes.SEARCH_REPOSITORY_SUCCESS;
+  payload: string[];
+}
+interface SearchRepositoryErrorAction {
+  type: ActionTypes.SEARCH_REPOSITORY_ERROR;
+  payload: string;
+}
+
+```
+
+📂 [**vite-typescript-redux\src\state\reducers\repositories.reducer.tsx**](./vite-typescript-redux/src/state/reducers/repositories.reducer.tsx)
+```tsx
+export enum ActionTypes {
+  SEARCH_REPOSITORY_START = "search_repositories_start",
+  SEARCH_REPOSITORY_SUCCESS = "search_repositories_success",
+  SEARCH_REPOSITORY_ERROR = "search_repositories_error",
+}
+
+```
+
 ### 11. Adding Action Creators
 ### 12. Adding Request Logic
 ### 13. Applying Typings to Dispatch
