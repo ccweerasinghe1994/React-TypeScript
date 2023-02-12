@@ -1004,6 +1004,8 @@ const reducer = (
 ): RepositoryState => {
 ```
 ### 17. Reminder on Event Types
+
+📂 vite-typescript-redux\src\components\repositoriesList.component.tsx
 ```tsx
 import React, { useState } from "react";
 export const RepositoriesList = () => {
@@ -1029,7 +1031,24 @@ export const RepositoriesList = () => {
 
 ```
 ### 18. Calling an Action Creator
+📂 vite-typescript-redux\src\components\repositoriesList.component.tsx
+```tsx
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { actionCreators } from "../state";
+
+export const RepositoriesList = () => {
+  const [term, setTerm] = useState("");
+  const dispatch = useDispatch();
+
+  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    dispatch(actionCreators.searchRepositories(term));
+  };
+
+```
 ### 19. Binding Action Creators
+
 ### 20. Selecting State
 ### 21. Awkward Typings Around React-Redux
 ### 22. Creating a Typed Selector
