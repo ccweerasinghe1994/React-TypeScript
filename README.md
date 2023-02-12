@@ -689,7 +689,18 @@ export default reducer;
 const reducer = (state: RepositoryState, action: any): RepositoryState => {
 ```
 ### 6. Typing an Action
+
+here we are adding the type for actions
+```tsx
+interface Action {
+  type: string;
+  payload?: any;
+}
+
+const reducer = (state: RepositoryState, action: Action): RepositoryState => {
+```
 ### 7. Separate Interfaces for Actions
+
 ### 8. Applying Action Interfaces
 ### 9. Adding an Action Type Enum
 ### 10. A Better Way to Organize Code

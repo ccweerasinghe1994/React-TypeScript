@@ -37,7 +37,7 @@
 			  "}",
 			"interface SampleActionI {",
 "  type: string;",
-"  payload: any;",
+"  payload?: any;",
 "}",
 "",
 "const $1 = (state: $2, action: $3): ","$4 => {",
