@@ -1124,7 +1124,35 @@ export * from "./reducers";
 ```
 
 ### 22. Creating a Typed Selector
+
+📂 vite-typescript-redux\src\hooks\useTypedSelector.tsx
+```tsx
+import { TypedUseSelectorHook, useSelector } from "react-redux";
+import { RootState } from "../state";
+
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+```
+
+and use the new hook
+```tsx
+import React, { useState } from "react";
+import { useActions } from "../hooks/useActions";
+import { useTypedSelector } from "../hooks/useTypedSelector";
+
+export const RepositoriesList = () => {
+  const [term, setTerm] = useState("");
+  const { searchRepositories } = useActions();
+
+  const { data, error, loading } = useTypedSelector(
+    (state) => state.repository
+  );
+  console.log("😁 ➡️", data);
+  console.log("😁 ➡️", error);
+  console.log("😁 ➡️", loading);
+```
 ### 23. Consuming Store State
+
 ### 24. Quick Wrapup
 
 ## The Big App - Here's What We're Building!
