@@ -1198,9 +1198,21 @@ let's use the data
 ## Code Transpiling in the Browser
 
 ### 1. Transpiling Options 
+![Alt text](img/25.png)
+![Alt text](img/26.png)
+![Alt text](img/27.png)
+
 ### 2. Remote Transpiling.mp4
+
+![Alt text](img/28.png)
+
 ### 3. Module Systems
+
+![Alt text](img/29.png)
+![Alt text](img/30.png)
+![Alt text](img/31.png)
 ### 4. Behind the Scenes with Webpack
+
 ### 5. Webpack with ES Modules
 ### 6. One Small Change
 ### 7. Options for Bundling
