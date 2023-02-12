@@ -16,6 +16,7 @@ interface User {
 interface UserSearchProps {
   users: User[];
 }
+
 interface UserSearchState {
   name: string;
   user: User | undefined;
