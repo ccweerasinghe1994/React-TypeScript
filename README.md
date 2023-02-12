@@ -1081,6 +1081,24 @@ export const RepositoriesList = () => {
     <div>
 ```
 ### 20. Selecting State
+
+📂 vite-typescript-redux\src\components\repositoriesList.component.tsx
+```tsx
+import React, { useState } from "react";
+import { useActions } from "../hooks/useActions";
+import { useSelector } from "react-redux";
+
+export const RepositoriesList = () => {
+  const [term, setTerm] = useState("");
+  const { searchRepositories } = useActions();
+
+  const { data, error, loading } = useSelector(
+    (state: any) => state.repository
+  );
+  console.log("🌴 ➡️", data);
+  console.log("⛔ ➡️", error);
+  console.log("😁 ➡️", loading);
+```
 ### 21. Awkward Typings Around React-Redux
 ### 22. Creating a Typed Selector
 ### 23. Consuming Store State
