@@ -614,15 +614,32 @@ let's create a vite app with typescript and react
 ```bash
 npm create vite@latest
 ```
+then install the dependencies
 
+```bash
+npm i redux react-redux axios redux-thunk
+```
+and the types 
+
+### 3. Redux Store Design
 ![Alt text](img/9.png)
 
 this is our redux store
 
 ![Alt text](img/10.png)
 
+our actions and action creators
 
-### 3. Redux Store Design
+![Alt text](img/11.png)
+
+folder structure
+
+![Alt text](img/12.png)
+
+we are going to use a single file
+
+![Alt text](img/13.png)
+
 ### 4. Reducer Setup
 ### 5. Annotating the Return Type
 ### 6. Typing an Action
