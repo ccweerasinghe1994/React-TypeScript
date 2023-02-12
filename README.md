@@ -23,20 +23,48 @@
 
 there are several ways of adding props type to a react component
 
+### 2. The Big Difference with Props
+Child
 ```tsx
 interface ChildProps {
     color:string;
-    onClick:()=>void
 }
-export const Child = ({color,onClick}:ChildProps)=>(
+export const Child = ({color}:ChildProps)=>(
     <div>
         <div>{color}</div>
-        <button onClick={onClick} ></button>
+        <button ></button>
     </div>
 )
 ```
-### 2. The Big Difference with Props
+Parent
+```tsx
+import {ChildAsFC} from './child'
+const Parent = ()=>{
+    return(
+        <ChildAsFC color='red' >
+            this is children
+        </ChildAsFC>
+    )
+}
+
+export default Parent;
+```
 ### 3. Explicit Component Type Annotations
+![](img/3.png)
+let's check the second way
+```tsx
+
+export const ChildAsFC:React.FC<ChildProps>=({color,onClick})=>{
+  return    <div>
+        <div>{color}</div>
+        <button onClick={onClick} ></button>
+    </div>
+}
+```
+there are few benefits to doing the types
+
+![](img/4.png)
+
 ### 4. Annotations with Children
 ### 5. State with TypeScript
 ### 6. Type Inference with State
@@ -45,6 +73,8 @@ export const Child = ({color,onClick}:ChildProps)=>(
 ### 9. Type Unions in State
 
 2. The Big Difference with Props
+
+
 Child
 ```tsx
 import React from "react"
@@ -71,6 +101,8 @@ export const ChildAsFC:React.FC<ChildProps>=({color,onClick})=>{
 ```
 
 Parent
+
+
 ```tsx
 import {ChildAsFC} from './child'
 const Parent = ()=>{
