@@ -608,7 +608,20 @@ export default FindUserWithRef;
 
 ## Typescript with Redux
 ### 1. App Overview
+
 ### 2. Project Setup
+let's create a vite app with typescript and react
+```bash
+npm create vite@latest
+```
+
+![Alt text](img/9.png)
+
+this is our redux store
+
+![Alt text](img/10.png)
+
+
 ### 3. Redux Store Design
 ### 4. Reducer Setup
 ### 5. Annotating the Return Type

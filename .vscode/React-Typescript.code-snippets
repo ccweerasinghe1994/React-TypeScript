@@ -15,5 +15,15 @@
 			"```"
 		],
 		"description": "create a tsx code block"
+	},
+	"add bash scipt": {
+		"scope": "markdown",
+		"prefix": "bash",
+		"body": [
+			"```bash",
+			"$1",
+			"```"
+		],
+		"description": "create a tsx code block"
 	}
 }
