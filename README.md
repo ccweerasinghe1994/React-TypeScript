@@ -1048,7 +1048,38 @@ export const RepositoriesList = () => {
 
 ```
 ### 19. Binding Action Creators
+let's create a hook that will make calling actions much easier
+📂 vite-typescript-redux\src\hooks\useActions.tsx
+```tsx
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state";
+export const useActions = () => {
+  const dispatch = useDispatch();
 
+  return bindActionCreators(actionCreators, dispatch);
+};
+
+```
+
+and use it on the 
+📂 vite-typescript-redux\src\hooks\useActions.tsx
+```tsx
+import React, { useState } from "react";
+import { useActions } from "../hooks/useActions";
+
+
+export const RepositoriesList = () => {
+  const [term, setTerm] = useState("");
+  const { searchRepositories } = useActions();
+  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    searchRepositories(term);
+  };
+
+  return (
+    <div>
+```
 ### 20. Selecting State
 ### 21. Awkward Typings Around React-Redux
 ### 22. Creating a Typed Selector
