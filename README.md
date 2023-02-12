@@ -1153,6 +1153,7 @@ export const RepositoriesList = () => {
 ```
 ### 23. Consuming Store State
 let's use the data 
+📂 vite-typescript-redux\src\components\repositoriesList.component.tsx
 ```tsx
   return (
     <div>
