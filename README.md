@@ -857,7 +857,56 @@ export enum ActionTypes {
 ```
 
 ### 11. Adding Action Creators
+```tsx
+import { ActionTypes } from "../action-types";
+
+export const searchRepository = (term: string) => {
+  return async (dispatch: any) => {
+    dispatch({
+      type: ActionTypes.SEARCH_REPOSITORY_START,
+    });
+
+    try {
+    } catch (error: any) {
+      dispatch({
+        type: ActionTypes.SEARCH_REPOSITORY_ERROR,
+        payload: error.message,
+      });
+    }
+  };
+};
+
+```
 ### 12. Adding Request Logic
+
+here we are adding the request logic
+```tsx
+export const searchRepositories = (term: string) => {
+  return async (dispatch: any) => {
+    dispatch({
+      type: ActionTypes.SEARCH_REPOSITORY_START,
+    });
+
+    try {
+      const { data } = await axios.get(
+        "https://registry.npmjs.org/-/v1/search",
+        {
+          params: {
+            text: term,
+          },
+        }
+      );
+
+      const names = data.objects.map((result: any) => result.package.name);
+
+      dispatch({
+        type: ActionTypes.SEARCH_REPOSITORY_SUCCESS,
+        payload: names,
+      });
+    } catch 
+
+```
+
 ### 13. Applying Typings to Dispatch
 ### 14. Setting Up Exports
 ### 15. Wiring Up to React
