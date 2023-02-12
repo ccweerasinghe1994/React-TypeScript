@@ -908,6 +908,21 @@ export const searchRepositories = (term: string) => {
 ```
 
 ### 13. Applying Typings to Dispatch
+
+this will help when we are dispatching actions
+```tsx
+import axios from "axios";
+import { Dispatch } from "redux";
+import { ActionTypes } from "../action-types";
+import { Action } from "../actions";
+
+export const searchRepositories = (term: string) => {
+  return async (dispatch: Dispatch<Action>) => {
+    dispatch({
+      type: ActionTypes.SEARCH_REPOSITORY_START,
+    });
+
+```
 ### 14. Setting Up Exports
 ### 15. Wiring Up to React
 ### 16. Oops... Initial State!

@@ -1,8 +1,10 @@
 import axios from "axios";
+import { Dispatch } from "redux";
 import { ActionTypes } from "../action-types";
+import { Action } from "../actions";
 
 export const searchRepositories = (term: string) => {
-  return async (dispatch: any) => {
+  return async (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionTypes.SEARCH_REPOSITORY_START,
     });
