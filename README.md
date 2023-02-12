@@ -42,7 +42,6 @@
     - [21. Awkward Typings Around React-Redux](#21-awkward-typings-around-react-redux)
     - [22. Creating a Typed Selector](#22-creating-a-typed-selector)
     - [23. Consuming Store State](#23-consuming-store-state)
-    - [24. Quick Wrapup](#24-quick-wrapup)
   - [The Big App - Here's What We're Building!](#the-big-app---heres-what-were-building)
     - [1. App Overview](#1-app-overview-1)
     - [2. Three Big Challenges](#2-three-big-challenges)
@@ -1182,11 +1181,19 @@ let's use the data
 
 ![Alt text](img/17.png)
 
-### 24. Quick Wrapup
 
 ## The Big App - Here's What We're Building!
 ### 1. App Overview
+
+![Alt text](img/18.png)
+
 ### 2. Three Big Challenges
+![Alt text](img/19.png)
+![Alt text](img/20.png)
+![Alt text](img/21.png)
+![Alt text](img/22.png)
+![Alt text](img/23.png)
+![Alt text](img/24.png)
 
 ## Code Transpiling in the Browser
 
