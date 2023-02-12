@@ -950,7 +950,59 @@ import * as actionCreators from "./action-creators";
 
 ```
 ### 15. Wiring Up to React
+
+📂 vite-typescript-redux\src\main.tsx
+```tsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+
+import { store } from "./state";
+
+import "./index.css";
+import { RepositoriesList } from "./components/repositoriesList.component";
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <div>
+        <h1>Search For repository</h1>
+        <RepositoriesList />
+      </div>
+      {/* <App /> */}
+    </Provider>
+  </React.StrictMode>
+);
+
+```
+
+📂 vite-typescript-redux\src\components\repositoriesList.component.tsx
+```tsx
+import React from "react";
+export const RepositoriesList = () => {
+  return (
+    <div>
+      <input type="text" />
+      <button>Search</button>
+    </div>
+  );
+};
+
+```
 ### 16. Oops... Initial State!
+
+📂 vite-typescript-redux\src\state\reducers\repositories.reducer.tsx
+```tsx
+const initialState: RepositoryState = {
+  data: [],
+  error: null,
+  loading: false,
+};
+
+const reducer = (
+  state: RepositoryState = initialState,
+  action: Action
+): RepositoryState => {
+```
 ### 17. Reminder on Event Types
 ### 18. Calling an Action Creator
 ### 19. Binding Action Creators
