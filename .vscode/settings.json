@@ -1,0 +1,8 @@
+{
+    "editor.fontFamily": "'Operator Mono Lig','FuraCode NF','JetBrains Mono','Azeret Mono','Azeret Mono ExtraLight',Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 17,
+    "editor.formatOnSave": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.fontWeight": "500"
+}
