@@ -1100,6 +1100,29 @@ export const RepositoriesList = () => {
   console.log("😁 ➡️", loading);
 ```
 ### 21. Awkward Typings Around React-Redux
+
+let's get the return type of our combine reducer function
+
+📂 vite-typescript-redux\src\state\reducers\index.ts
+```tsx
+import { combineReducers } from "redux";
+import repositoryReducer from "./repositories.reducer";
+export const reducers = combineReducers({
+  repository: repositoryReducer,
+});
+
+export type RootState = ReturnType<typeof reducers>;
+
+```
+and add the export to the index file
+
+📂 vite-typescript-redux\src\state\index.ts
+```tsx
+export * from "./store";
+export * as actionCreators from "./action-creators";
+export * from "./reducers";
+```
+
 ### 22. Creating a Typed Selector
 ### 23. Consuming Store State
 ### 24. Quick Wrapup
