@@ -28,6 +28,16 @@ export const RepositoriesList = () => {
         />
         <button>Search</button>
       </form>
+
+      {error && <h1>error</h1>}
+      {loading && <h1>Loading</h1>}
+      {data && (
+        <div>
+          {data.map((item: any) => (
+            <div key={item}>{item}</div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

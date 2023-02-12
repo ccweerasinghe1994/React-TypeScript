@@ -1152,6 +1152,34 @@ export const RepositoriesList = () => {
   console.log("😁 ➡️", loading);
 ```
 ### 23. Consuming Store State
+let's use the data 
+```tsx
+  return (
+    <div>
+      <form onSubmit={onSubmitHandler}>
+        <input
+          value={term}
+          type="text"
+          onChange={(event) => setTerm(event.target.value)}
+        />
+        <button>Search</button>
+      </form>
+
+      {error && <h1>error</h1>}
+      {loading && <h1>Loading</h1>}
+      {data && (
+        <div>
+          {data.map((item: any) => (
+            <div key={item}>{item}</div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+```
+
+![Alt text](img/17.png)
 
 ### 24. Quick Wrapup
 
