@@ -910,6 +910,8 @@ export const searchRepositories = (term: string) => {
 ### 13. Applying Typings to Dispatch
 
 this will help when we are dispatching actions
+
+📂 vite-typescript-redux\src\state\action-creaters\index.ts
 ```tsx
 import axios from "axios";
 import { Dispatch } from "redux";
@@ -924,6 +926,29 @@ export const searchRepositories = (term: string) => {
 
 ```
 ### 14. Setting Up Exports
+📂 vite-typescript-redux\src\state\reducers\index.ts
+```tsx
+import { combineReducers } from "redux";
+import repositoryReducer from "./repositories.reducer";
+export const reducers = combineReducers({
+  repository: repositoryReducer,
+});
+
+```
+📂 vite-typescript-redux\src\state\store.ts
+```tsx
+import { createStore, applyMiddleware } from "redux";
+import { reducers } from "./reducers";
+import thunk from "redux-thunk";
+export const store = createStore(reducers, {}, applyMiddleware(thunk));
+
+```
+📂 vite-typescript-redux\src\state\index.ts
+```tsx
+import * as store from "./store";
+import * as actionCreators from "./action-creators";
+
+```
 ### 15. Wiring Up to React
 ### 16. Oops... Initial State!
 ### 17. Reminder on Event Types
