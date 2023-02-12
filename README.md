@@ -684,6 +684,10 @@ export default reducer;
 
 ```
 ### 5. Annotating the Return Type
+```tsx
+//  here we are adding the return type of the function
+const reducer = (state: RepositoryState, action: any): RepositoryState => {
+```
 ### 6. Typing an Action
 ### 7. Separate Interfaces for Actions
 ### 8. Applying Action Interfaces
