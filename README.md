@@ -1382,9 +1382,11 @@ let's use public cdn unpkg to solve the issue
 ### 11. Demo ESBuild Plugin
 let's use a sample plugin and output the date to the frontend
 ![Alt text](img/52.png)
+### 12. ESBuild Can Bundle!
 this name property is for debugging purpose only
 this build argument is automatically called by esbuild
 this build process = build argument
+### 13. Deep Dive on Bundling
 
 there are two event listener we are listening to.
 onLoad and onResolved
@@ -1399,9 +1401,17 @@ how esbuild process happens
 ![Alt text](img/57.png)
 
 we are overriding the default behavior of esbuild(try to look in to the file system) 
-### 12. ESBuild Can Bundle!
-### 13. Deep Dive on Bundling
+
 ### 14. Filters and Namespaces
+we will have multiple onResolve function for different type os functions
+
+these filters are running against the file name
+
+and we can use namespaces like filters
+
+![Alt text](img/58.png)
+
+
 ### 15. Adding a Tiny Test Package
 
 ## Dynamic Fetching and Loading of NPM Modules
