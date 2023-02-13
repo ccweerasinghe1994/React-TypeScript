@@ -1325,7 +1325,7 @@ import * as esbuild from 'esbuild-wasm';
 
 // then function to start the service
   const startService = async () => {
-    ref.current = await esbuild.initialize({
+    await esbuild.initialize({
       worker: true,
       wasmURL: './esbuild.wasm',
     });
@@ -1338,8 +1338,39 @@ import * as esbuild from 'esbuild-wasm';
   }, []);
 ```
 ### 6. Using Refs for Arbitrary Values
+```tsx
+// so we need access to the esbuild service
+// lets use a ref
+const ref = useRef<any>();
+
+// giving the ref values
+const startService = async () => {
+  ref.current = await esbuild.initialize({
+    worker: true,
+    wasmURL: './esbuild.wasm',
+  });
+};
+// calling the method
+useEffect(() => {
+  startService();
+}, []);
+```
 ### 7. Transpiling Works!
+here we can use esbuild    
+```tsx
+    const result = await esbuild.build({
+      entryPoints: ['index.js'],
+      bundle: true,
+      write: false,
+      define:{
+        'process.env.NODE_ENV':'production',
+        global:'window',
+      }
+    });
+```
 ### 8. Troubles with Bundling in the Browser
+
+![Alt text](img/48.png)
 ### 9. Issues with NPM
 ### 10. Solution with Unpkg
 ### 11. Demo ESBuild Plugin
