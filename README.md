@@ -1249,9 +1249,15 @@ these are the options we can consider for transpiling and bundling.
 ![Alt text](img/38.png)
 ### 8. So Which Approach
 ![Alt text](img/39.png)
+we can do the bundling on the browser.
 ![Alt text](img/40.png)
+but
 ![Alt text](img/41.png)
 ### 9. A Webpack Replacement
+we have to remove the webpack and find another solution
+![Alt text](img/42.png)
+so we can use esbuild to build and transpile the code on the browser 
+![Alt text](img/43.png)
 
 ## Implementing In-Browser Bundling
 ### 1. A Demo App
