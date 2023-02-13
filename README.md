@@ -1413,6 +1413,10 @@ and we can use namespaces like filters
 
 
 ### 15. Adding a Tiny Test Package
+let's try to load this file from unpkg
+![Alt text](img/59.png)
+let's remove the else case and change the code.
+![Alt text](img/60.png)
 
 ## Dynamic Fetching and Loading of NPM Modules
 ### 1. Dynamically Fetching Modules 
