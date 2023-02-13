@@ -1212,6 +1212,27 @@ let's use the data
 ![Alt text](img/30.png)
 ![Alt text](img/31.png)
 ### 4. Behind the Scenes with Webpack
+create a empty node project
+
+and install 
+```bash
+npm i -D webpack webpack-cli
+```
+
+and add a build script
+
+```json
+"build":"webpack --mode=development"
+```
+then run the build
+
+```bash
+npm run build
+```
+the build bundler file is this.
+simplified version of it.
+![Alt text](img/32.png)
+![Alt text](img/33.png)
 
 ### 5. Webpack with ES Modules
 ### 6. One Small Change
