@@ -1371,6 +1371,7 @@ here we can use esbuild
 ### 8. Troubles with Bundling in the Browser
 
 ![Alt text](img/48.png)
+![Alt text](img/49.png)
 ### 9. Issues with NPM
 ### 10. Solution with Unpkg
 ### 11. Demo ESBuild Plugin
