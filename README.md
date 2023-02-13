@@ -1380,6 +1380,25 @@ we can't use the npm api for this.
 let's use public cdn unpkg to solve the issue
 ![Alt text](img/51.png)
 ### 11. Demo ESBuild Plugin
+let's use a sample plugin and output the date to the frontend
+![Alt text](img/52.png)
+this name property is for debugging purpose only
+this build argument is automatically called by esbuild
+this build process = build argument
+
+there are two event listener we are listening to.
+onLoad and onResolved
+![Alt text](img/53.png)
+
+these are the hard coded files
+![Alt text](img/54.png)
+![Alt text](img/55.png)
+how esbuild process happens
+![Alt text](img/56.png)
+
+![Alt text](img/57.png)
+
+we are overriding the default behavior of esbuild(try to look in to the file system) 
 ### 12. ESBuild Can Bundle!
 ### 13. Deep Dive on Bundling
 ### 14. Filters and Namespaces
