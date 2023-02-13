@@ -1373,7 +1373,12 @@ here we can use esbuild
 ![Alt text](img/48.png)
 ![Alt text](img/49.png)
 ### 9. Issues with NPM
+we have to figure out a way to download the files and use it in the browser 
+we can't use the npm api for this.
+![Alt text](img/50.png)
 ### 10. Solution with Unpkg
+let's use public cdn unpkg to solve the issue
+![Alt text](img/51.png)
 ### 11. Demo ESBuild Plugin
 ### 12. ESBuild Can Bundle!
 ### 13. Deep Dive on Bundling
