@@ -1274,8 +1274,69 @@ npm i esbuild-wasm
 
 remove the boiler plate code
 ### 3. Basic Form Elements
+let's build a simple form 
+![Alt text](img/45.png)
+
+```tsx
+
+import { useState, useEffect, useRef } from 'react';
+import './App.css';
+
+
+function App() {
+  const [input, setInput] = useState<string>('');
+  const [code, setCode] = useState<string>('');
+
+
+  const handleChange = (event) => {
+    setInput(event.target.value)
+  };
+  const handleClick = async (event) => {
+   console.log.event(event)
+  };
+  return (
+    <>
+      <textarea
+        value={input}
+        onChange={handleChange}
+        name=''
+        id=''
+        cols={30}
+        rows={10}
+      ></textarea>
+      <div>
+        <button onClick={handleClick} type='button'>
+          Submit
+        </button>
+        <pre>{code}</pre>
+      </div>
+    </>
+  );
+}
+
+export default App;
+```
 ### 4. Understanding ESBuild
+![Alt text](img/46.png)
+![Alt text](img/47.png)
 ### 5. Initializing ESBuild
+```tsx
+import * as esbuild from 'esbuild-wasm';
+
+// then function to start the service
+  const startService = async () => {
+    ref.current = await esbuild.initialize({
+      worker: true,
+      wasmURL: './esbuild.wasm',
+    });
+  };
+
+  // then to only run once
+  
+  useEffect(() => {
+    startService();
+  }, []);
+```
 ### 6. Using Refs for Arbitrary Values
 ### 7. Transpiling Works!
 ### 8. Troubles with Bundling in the Browser
