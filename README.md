@@ -1261,7 +1261,18 @@ so we can use esbuild to build and transpile the code on the browser
 
 ## Implementing In-Browser Bundling
 ### 1. A Demo App
+this is the app we are building
+![Alt text](img/44.png)
+let's create a vite app.
+
 ### 2. Project Setup
+let's install esbuild
+
+```bash
+npm i esbuild-wasm
+```
+
+remove the boiler plate code
 ### 3. Basic Form Elements
 ### 4. Understanding ESBuild
 ### 5. Initializing ESBuild
