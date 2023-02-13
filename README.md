@@ -1235,7 +1235,12 @@ simplified version of it.
 ![Alt text](img/33.png)
 
 ### 5. Webpack with ES Modules
+when we use es modules output looks different. 
 ### 6. One Small Change
+![Alt text](img/34.png)
+![Alt text](img/35.png)
+
+
 ### 7. Options for Bundling
 ### 8. So Which Approach
 ### 9. A Webpack Replacement
