@@ -1242,7 +1242,15 @@ when we use es modules output looks different.
 
 
 ### 7. Options for Bundling
+these are the options we can consider for transpiling and bundling.
+
+![Alt text](img/36.png)
+![Alt text](img/37.png)
+![Alt text](img/38.png)
 ### 8. So Which Approach
+![Alt text](img/39.png)
+![Alt text](img/40.png)
+![Alt text](img/41.png)
 ### 9. A Webpack Replacement
 
 ## Implementing In-Browser Bundling
